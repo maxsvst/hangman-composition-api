@@ -1,26 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <GameHeader />
+  <div class="game-container">
+    <GameFigure />
+    <GameWrongLetters />
+    <GameWord :word="12"/>
+  </div>
+  <GamePopup />
+  <GameNotification />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import GameFigure from "./components/GameFigure.vue";
+import GameWrongLetters from "./components/GameWrongLetters.vue";
+import GameWord from "./components/GameWord.vue";
+import GamePopup from "./components/GamePopup.vue";
+import GameNotification from "./components/GameNotification.vue";
+import GameHeader from "./components/GameHeader.vue";
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
