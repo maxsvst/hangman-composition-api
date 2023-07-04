@@ -1,23 +1,20 @@
 <template>
   <div class="word">
     <span
-      v-for="(letter, index) in word"
+      v-for="(letter, index) in name"
       :key="letter + index"
       class="letter"
-    ></span>
+      >{{ correctLetters.includes(letter) ? letter : "" }}</span
+    >
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    word: {
-      type: String,
-      required: true,
-    },
+    name: String,
+    correctLetters: Array,
   },
-  setup(props) {
-    console.log(props.word);
-  },
+  setup() {},
 };
 </script>
